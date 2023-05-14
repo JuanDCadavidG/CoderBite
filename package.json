@@ -1,0 +1,24 @@
+{
+  "name": "cypress-e2e",
+  "version": "3.0.0",
+  "description": "Project cypress from my user",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress open",
+    "file": "cypress run --browser electron --spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "Coderbyte.git"
+  },
+  "keywords": [
+    "e2e",
+    "automation",
+    "cypress"
+  ],
+  "author": "wilson medina",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^12.12.0"
+  }
+}
