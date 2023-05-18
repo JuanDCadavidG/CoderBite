@@ -1,18 +1,19 @@
 {
+  
   "username": {
-      "valid": "neskycuqui@upextesting.com",
-      "invalid": "jajaja.com"
-  },
-  "password": {
-      "valid": "12345678",
-      "invalid": "364598"
-  },
-  "incorrectMessageLogin" : "The username or password were incorrect",
-  "emailResetSuccessfully" : "Password reset email sent!",
-  "emailResetFail" : "email incorrect, try again!",
-  "messageRedirect": "If you forgot your password, please enter in your email address.",
-  "login": "/challenges",
-"logout": "https://coderbyte.com/",
-  "forgotPassword": "/forgotpassword"
+        "valid": "nq@testing.com",
+        "invalid": "jajaja.com"
+    },
+    "password": {
+        "valid": "12345678",
+        "invalid": "364598"
+    },
+    "incorrectMessageLogin" : "The username or password were incorrect",
+    "emailResetSuccessfully" : "Password reset email sent!",
+    "emailResetFail" : "email incorrect, try again!",
+    "messageRedirect": "If you forgot your password, please enter in your email address.",
+    "login": "/challenges",
+    "logout": "https://coderbyte.com/",
+    "forgotPassword": "/forgotpassword"
 
 }
