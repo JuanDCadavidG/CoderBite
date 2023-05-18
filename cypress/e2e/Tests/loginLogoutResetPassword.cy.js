@@ -1,23 +1,15 @@
 import { loginCoderbyte } from '../../support/pages/LoginCoderbyte'
 
-const { SUT } = Cypress.env('endpoint')
-
-describe('GX-16572 | Coderbyte | LOGIN | Login, Logout and Reset Password', function () {
+describe('Coderbyte | LOGIN | Login, Logout and Reset Password', function () {
     
     beforeEach('User is on login page', () => {
 
-        cy.once("fail", (err) => {
-            return false;
-        });
-        cy.visit(SUT)
-        loginCoderbyte.clickLoginForm()
-        cy.fixture('loginCoderbyte').then(fxt => {
-			this.fxt = fxt
-        });
+        cy.LoginPage()
+        cy.fixture('loginCoderbyte').then(fxt => { this.fxt = fxt });
       
     })
     
-    it('16573 | TC1: Validate can login successfully', () => {
+    it('TC1: Validate can login successfully', () => {
         
 		loginCoderbyte.writeUsername(this.fxt.username.valid);
 		loginCoderbyte.writePassword(this.fxt.password.valid);
@@ -27,7 +19,7 @@ describe('GX-16572 | Coderbyte | LOGIN | Login, Logout and Reset Password', func
         
     })
     
-    it('16573 | TC2: Validate can’t login due to incorrect data', () => {
+    it('TC2: Validate can’t login due to incorrect data', () => {
 
 		loginCoderbyte.writeUsername(this.fxt.username.invalid);
 		loginCoderbyte.writePassword(this.fxt.password.invalid);
@@ -37,7 +29,7 @@ describe('GX-16572 | Coderbyte | LOGIN | Login, Logout and Reset Password', func
         
 	})
 
-    it('16573 | TC3: Validate can reset password successfully', () => {
+    it('TC3: Validate can reset password successfully', () => {
 
         loginCoderbyte.clickForgotPassword();
         
@@ -51,7 +43,7 @@ describe('GX-16572 | Coderbyte | LOGIN | Login, Logout and Reset Password', func
         
 	})
     
-    it('16573 | TC4: Validate can’t reset password due to incorrect email address.', () => {
+    it('TC4: Validate can’t reset password due to incorrect email address.', () => {
 
         loginCoderbyte.clickForgotPassword();
         
@@ -65,7 +57,7 @@ describe('GX-16572 | Coderbyte | LOGIN | Login, Logout and Reset Password', func
         
 	})
     
-    it('16573 | TC5: Validate can logout successfully.', () => {
+    it('TC5: Validate can logout successfully.', () => {
 
 		loginCoderbyte.writeUsername(this.fxt.username.valid);
 		loginCoderbyte.writePassword(this.fxt.password.valid);
@@ -79,4 +71,5 @@ describe('GX-16572 | Coderbyte | LOGIN | Login, Logout and Reset Password', func
         cy.url().should('contain', this.fxt.logout)
 
     })
+    
 })
